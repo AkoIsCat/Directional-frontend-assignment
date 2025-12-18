@@ -1,0 +1,18 @@
+@theme {
+  /* 사이드바 너비 */
+  --width-sidebar: 150px;
+
+  /* 사이드바 배경색 */
+  --color-sidebar: #9cc6db;
+
+  /* 사이드바 hover 박스 너비 */
+  --width-iconHover: 90px;
+
+  /* 사이드바 hover 박스 높이 */
+  --height-iconHover: 90px;
+
+  /* 사이드바 hover시 배경색 */
+  --color-iconHover: #79adc7;
+
+  --radius-hover: 5px;
+}
