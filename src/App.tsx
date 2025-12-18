@@ -1,5 +1,29 @@
+import Posts from './pages/Posts.tsx';
+import CreatePost from './pages/CreatePost.tsx';
+import EditPost from './pages/EditPost.tsx';
+import MyPage from './pages/MyPage.tsx';
+import PostDetail from './pages/PostDetail.tsx';
+import Analytics from './pages/Analytics.tsx';
+
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
+import { Route, Routes, Navigate } from 'react-router';
+
+const queryClient = new QueryClient();
+
 function App() {
-  return <div className="text-red-500">세팅완료</div>;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Routes>
+        <Route path="/" element={<Navigate to="/posts" replace />} />
+        <Route path="/analytics" element={<Analytics />} />
+        <Route path="/posts" element={<Posts />} />
+        <Route path="/posts/create" element={<CreatePost />} />
+        <Route path="/posts/:id/edit" element={<EditPost />} />
+        <Route path="/posts/:id" element={<PostDetail />} />
+        <Route path="/my-page" element={<MyPage />} />
+      </Routes>
+    </QueryClientProvider>
+  );
 }
 
 export default App;
