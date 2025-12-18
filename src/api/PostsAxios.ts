@@ -1,5 +1,5 @@
 import PostsInstance from './PostsInstance';
-import type { CreatePostType, EditPostType } from '../types';
+import type { CreatePostType, UpdatePostType } from '../types';
 
 export const getPosts = async () => {
   try {
@@ -25,7 +25,7 @@ export const postPost = async (data: CreatePostType) => {
   }
 };
 
-export const updatePost = async (data: EditPostType) => {
+export const updatePost = async (data: UpdatePostType) => {
   try {
     const response = await PostsInstance.patch(`/${data.id}`, {
       title: data.title,
