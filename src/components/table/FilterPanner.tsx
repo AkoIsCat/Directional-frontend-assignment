@@ -53,9 +53,7 @@ export default function FilterPanel<TData>({ table }: FilterPanelProps<TData>) {
                   `}
                   />
                   <span className="truncate uppercase">
-                    {typeof column.columnDef.header === 'string'
-                      ? column.columnDef.header
-                      : column.id}
+                    {column.columnDef.meta?.label}
                   </span>
                 </label>
               ))}

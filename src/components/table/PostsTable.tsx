@@ -47,6 +47,9 @@ const PostsTable = ({ data, bottomRef, hasNextPage }: PostsTableProps) => {
   const columns: ColumnDef<Post>[] = [
     {
       accessorKey: 'number',
+      meta: {
+        label: '번호',
+      },
       header: '번호',
       minSize: 50,
       maxSize: 100,
@@ -54,6 +57,9 @@ const PostsTable = ({ data, bottomRef, hasNextPage }: PostsTableProps) => {
     },
     {
       accessorKey: 'title',
+      meta: {
+        label: '제목',
+      },
       header: ({ column }) => {
         const sorted = column.getIsSorted();
         return (
@@ -86,11 +92,17 @@ const PostsTable = ({ data, bottomRef, hasNextPage }: PostsTableProps) => {
     },
     {
       accessorKey: 'userId',
+      meta: {
+        label: '아이디',
+      },
       header: '아이디',
       cell: (props) => <p>{props.getValue<string>()}</p>,
     },
     {
       accessorKey: 'createdAt',
+      meta: {
+        label: '작성일',
+      },
       header: ({ column }) => {
         const sorted = column.getIsSorted();
         return (
@@ -111,6 +123,9 @@ const PostsTable = ({ data, bottomRef, hasNextPage }: PostsTableProps) => {
     },
     {
       accessorKey: 'category',
+      meta: {
+        label: '카테고리',
+      },
       header: '카테고리',
       cell: (props) => <p>{props.getValue<string>()}</p>,
       filterFn: (row, columnId, filterValue: string[]) => {
@@ -120,6 +135,9 @@ const PostsTable = ({ data, bottomRef, hasNextPage }: PostsTableProps) => {
     },
     {
       accessorKey: 'tags',
+      meta: {
+        label: '태그',
+      },
       header: '태그',
       minSize: 50,
       cell: (props) => <p>{props.getValue<string>()}</p>,
