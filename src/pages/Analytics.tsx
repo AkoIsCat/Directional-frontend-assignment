@@ -67,7 +67,7 @@ const Analytics = () => {
       <main className="m-14">
         <Header>데이터 시각화</Header>
         {/* 첫번째 줄 */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 ml-5">
           <section className="mt-10">
             <h2 className="text-xl font-bold mb-4">인기 커피 브랜드</h2>
             <div className="h-100">
