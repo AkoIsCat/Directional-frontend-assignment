@@ -1,73 +1,73 @@
-# React + TypeScript + Vite
+# 🚀 Directional Assignment - 데이터 시각화 및 게시판 관리 시스템
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### 배포 링크: https://directional-frontend-assignment-iota.vercel.app
 
-Currently, two official plugins are available:
+## ⚙️ 프로젝트 실행 방법
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+### 1. 환경 변수 설정
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+프로젝트 루트 디렉토리에 `.env` 파일을 생성하고 아래 내용을 입력해야 합니다.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```text
+VITE_BASE_URL=기본_API_주소
+VITE_POSTS_BASE_URL=Posts_엔드포인트를_포함한_URL
+VITE_MOCK_BASE_URL=Mocks_엔드포인트를_포함한_URL
+VITE_AUTH_EMAIL=테스트_계정_이메일
+VITE_AUTH_PASSWORD=테스트_계정_비밀번호
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+# 의존성 패키지 설치
+npm install
+
+# 개발 서버 실행
+npm run dev
+```
+
+## 🛠 사용 기술 스택
+
+### 1. Framework & Core
+
+- **React 19**
+- **TypeScript**
+- **Vite**
+
+### 2. State Management & Data Fetching
+
+- **@tanstack/react-query (v5)**
+- **Axios**
+
+### 3. Data Visualization
+
+- **Recharts**
+
+### 4. UI Library & Styling
+
+- **Tailwind CSS (v4)**
+- **@tanstack/react-table**
+
+### 5. Utility
+
+- **React Router Dom (v7)**
+- **Dayjs**
+
+## ✨ 주요 기능
+
+### 게시판
+
+- 게시글 CRUD 및 테이블 기반 목록 UI 구현
+- 컬럼 너비 조절 및 표시 여부 제어
+- 검색, 정렬, 카테고리 필터링 기능
+- 무한 스크롤 기반 페이지네이션
+- 금칙어 포함 시 게시글 등록 제한
+- 게시판 CRUD 테스트를 위해 사용자 아이디를 `u_mock_1`로 임시 고정하여 사용
+
+### 데이터 시각화
+
+- Bar / Donut / Stacked Bar / Area / Multi-Line 차트 구현
+- 범례를 통한 데이터 표시/숨김 제어
+- Hover 시 데이터 상세 툴팁 제공
+- 팀별 데이터 구분 및 시각적 일관성 유지
