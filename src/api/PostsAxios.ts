@@ -1,5 +1,5 @@
 import PostsInstance from './PostsInstance';
-import type { CreatePostType, UpdatePostType } from '../types';
+import type { BasePost, UpdatePost } from '../types';
 
 export const getPosts = async () => {
   try {
@@ -11,11 +11,11 @@ export const getPosts = async () => {
   }
 };
 
-export const postPost = async (data: CreatePostType) => {
+export const createPost = async (data: BasePost) => {
   try {
     const response = await PostsInstance.post('', {
       title: data.title,
-      body: data.contents,
+      body: data.body,
       category: data.category,
       tags: data.tags,
     });
@@ -25,11 +25,11 @@ export const postPost = async (data: CreatePostType) => {
   }
 };
 
-export const updatePost = async (data: UpdatePostType) => {
+export const updatePost = async (data: UpdatePost) => {
   try {
     const response = await PostsInstance.patch(`/${data.id}`, {
       title: data.title,
-      body: data.contents,
+      body: data.body,
       category: data.category,
       tags: data.tags,
     });
@@ -48,7 +48,7 @@ export const deleteAllPosts = async () => {
   }
 };
 
-export const deletePost = async (id: number) => {
+export const deletePost = async (id: string) => {
   try {
     const response = await PostsInstance.delete(`/${id}`);
     return response.data;
