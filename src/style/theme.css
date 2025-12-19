@@ -14,5 +14,6 @@
   /* 사이드바 hover시 배경색 */
   --color-iconHover: #79adc7;
 
+  /* border-radius 5px */
   --radius-hover: 5px;
 }
