@@ -1,7 +1,6 @@
 import Posts from './pages/Posts.tsx';
 import CreatePost from './pages/CreatePost.tsx';
 import EditPost from './pages/EditPost.tsx';
-import MyPage from './pages/MyPage.tsx';
 import PostDetail from './pages/PostDetail.tsx';
 import Analytics from './pages/Analytics.tsx';
 
@@ -22,7 +21,6 @@ function App() {
           <Route path="/posts/create" element={<CreatePost />} />
           <Route path="/posts/:id/edit" element={<EditPost />} />
           <Route path="/posts/:id" element={<PostDetail />} />
-          <Route path="/my-page" element={<MyPage />} />
         </Routes>
       </AuthWrapper>
     </QueryClientProvider>
