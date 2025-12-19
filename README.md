@@ -1,4 +1,4 @@
-# 🚀 Directional Assignment - 데이터 시각화 및 게시판 관리 시스템
+# 🚀 Directional Assignment
 
 ### 배포 링크: https://directional-frontend-assignment-iota.vercel.app
 
