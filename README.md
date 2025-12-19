@@ -4,9 +4,6 @@
 
 ## ⚙️ 프로젝트 실행 방법
 
-
-
-
 ### 1. 환경 변수 설정
 
 프로젝트 루트 디렉토리에 `.env` 파일을 생성하고 아래 내용을 입력해야 합니다.
@@ -47,6 +44,7 @@ npm run dev
 ### 4. UI Library & Styling
 
 - **Tailwind CSS (v4)**
+- **Shadcn/UI**
 - **@tanstack/react-table**
 
 ### 5. Utility
